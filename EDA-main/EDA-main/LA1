@@ -1,0 +1,41 @@
+# Set a CRAN mirror
+options(repos = c(CRAN = "https://cran.rstudio.com"))
+
+# Install and load the required packages
+install.packages(c("tidyverse", "readxl"))
+library(tidyverse)
+library(readxl)
+
+# Read the Human Resources Analytics dataset
+hr_data <- read.csv("path/to/your/hr_dataset.csv")  # Replace with the actual path to your dataset
+
+# Display structure and summary of the dataset
+str(hr_data)
+summary(hr_data)
+
+# Read another dataset (if available)
+# additional_data <- read.csv("path/to/your/another_dataset.csv")  # Replace with another dataset if needed
+# str(additional_data)
+# summary(additional_data)
+
+# Data exploration and analysis
+# Add your analysis code here based on the specific characteristics of the HR dataset
+
+# Example: Display a table of counts by a specific variable
+table(hr_data$Attrition)
+
+# Example: Display the head of the dataset
+head(hr_data)
+
+# Example: Calculate and display the mean of a numeric variable
+mean(hr_data$Salary)
+
+# Example: Display unique values of a categorical variable
+unique(hr_data$Department)
+
+# Example: Display a summary of the dataset
+summary(hr_data)
+
+# Add more code for your specific analysis
+
+# Conclusion or final remarks

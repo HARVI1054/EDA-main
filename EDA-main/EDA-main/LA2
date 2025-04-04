@@ -1,0 +1,48 @@
+# Set a CRAN mirror
+options(repos = c(CRAN = "https://cran.rstudio.com"))
+
+# Install and load necessary packages
+install.packages(c("readr", "ggplot2", "dplyr", "reshape2", "plotly"))
+library(readr)
+library(ggplot2)
+library(dplyr)
+library(reshape2)
+library(plotly)
+
+# Import Climate Change dataset (replace 'your_data.csv' with the actual file path)
+climate_data <- read.csv("path/to/your/climate_change_dataset.csv")  
+
+# Explore the structure of your data
+str(climate_data)
+
+# Plotting graphs
+
+# Example: Bar plot of Temperature Anomaly
+ggplot(climate_data, aes(x = Year, y = Temperature_Anomaly, fill = Country)) +
+  geom_bar(stat = "identity") +
+  labs(title = "Temperature Anomaly Over the Years",
+       x = "Year",
+       y = "Temperature Anomaly",
+       fill = "Country") +
+  theme_minimal()
+
+# Example: Scatter plot of Land Average Temperature vs. Land And Ocean Average Temperature
+ggplot(climate_data, aes(x = LandAverageTemperature, y = LandAndOceanAverageTemperature, color = Country)) +
+  geom_point() +
+  labs(title = "Land Average Temperature vs. Land and Ocean Average Temperature",
+       x = "Land Average Temperature",
+       y = "Land and Ocean Average Temperature",
+       color = "Country") +
+  theme_minimal()
+
+# Example: Histogram of Land Average Temperature
+ggplot(climate_data, aes(x = LandAverageTemperature, fill = Country)) +
+  geom_histogram(binwidth = 0.1, position = "dodge", alpha = 0.7) +
+  labs(title = "Histogram of Land Average Temperature",
+       x = "Land Average Temperature",
+       y = "Count") +
+  theme_minimal()
+
+# Add more code for your specific analysis
+
+# Conclusion or final remarks
